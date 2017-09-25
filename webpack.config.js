@@ -4,7 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 
-    context: path.join(__dirname, 'src-ts'),
+    //context: path.join(__dirname, 'src-ts'),
+    context: path.join(__dirname, 'src-js'),
 
     entry: {
         shop: [
