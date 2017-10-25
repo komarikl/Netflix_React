@@ -59,10 +59,10 @@ export default class App extends React.Component {
     render() {
         return (
             <div>
-                <header>
+                <header class="header">
                     <Logo />
                 </header>
-                <main>
+                <main class="main">
                     <Search />
                     <MovieFullInfo movie={movies[0]}/>
                     <div className="row">
@@ -71,7 +71,7 @@ export default class App extends React.Component {
                     </div>
                     <Content movies={movies}/>
                 </main>
-                <footer>
+                <footer class="footer">
                     <Logo />
                 </footer>
             </div>
