@@ -58,20 +58,21 @@ export default class App extends React.Component {
 
     render() {
         return (
-            <div>
-                <header class="header">
+            <div className="wrapper">
+                <header className="header">
                     <Logo />
-                </header>
-                <main class="main">
                     <Search />
-                    <MovieFullInfo movie={movies[0]}/>
+                    {/* <MovieFullInfo movie={movies[0]}/> */}
+                </header>
+                <main className="main">
+
                     <div className="row">
                         <span className="counter">{movies.length} movies found</span>
                         <SortBy />
                     </div>
                     <Content movies={movies}/>
                 </main>
-                <footer class="footer">
+                <footer className="footer">
                     <Logo />
                 </footer>
             </div>
