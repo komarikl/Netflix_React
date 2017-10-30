@@ -21,12 +21,13 @@ export class Search extends React.Component {
     render() {
       return (
         <form onSubmit={this.onSubmit} className="search-form">
-            <label htmlFor="search-field">Find your movie</label>
-            <input type="text" name="search-field" id="search-field" value={this.state.value} onChange={this.onChange}/>
-            <span>Search by</span>
-            <input type="radio" name="serching" id="title"/><label htmlFor="title">Title</label>
-            <input type="radio" name="serching" id="director"/><label htmlFor="director">Director</label>
-            <input type="submit" value="Submit" />
+            <label className="search-form__label" htmlFor="search-field">Find your movie</label>
+            <input className="search-form__field" type="text" name="search-field" id="search-field" value={this.state.value} onChange={this.onChange}/>
+            <div className="search-form__by by">Search by
+              <input className="by__title" type="radio" name="serching" id="title"/><label htmlFor="title">Title</label>
+              <input className="by__director" type="radio" name="serching" id="director"/><label htmlFor="director">Director</label>
+            </div>
+            <input className="search-form__submit" type="submit" value="Search" />
         </form>
       );
     }
