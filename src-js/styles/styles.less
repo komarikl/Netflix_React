@@ -29,15 +29,12 @@ body {
 }
 
 .header{
-    flex: none;
-    height: auto;
-    padding: 1em 0 1em 0;
-    background-color: @myBlack;
-    background-image: url(https://i.amz.mshcdn.com/LWRrA7B2yTQxFTlc_4eb1Mao2DM=/1200x630/2017%2F05%2F16%2F8d%2Fa90b60e1a7b645f5b90067584ab381d3.e786a.jpg);
-    background-size: 100%;
+    position: absolute;
+    left: 10%;
+    top: 1em;
 
     .logo{
-        margin: 0 0 3em 10%;
+        margin: 0;
     }
 }
 
@@ -48,10 +45,12 @@ body {
 } 
 
 .search-form{
-    margin: 0 0 1em 10%;
+    padding: 6em 0 3em 10%;
     text-transform: uppercase;
     font: 1em sans-serif;
     color: #fff;
+    background-image: url(https://i.amz.mshcdn.com/LWRrA7B2yTQxFTlc_4eb1Mao2DM=/1200x630/2017%2F05%2F16%2F8d%2Fa90b60e1a7b645f5b90067584ab381d3.e786a.jpg);
+    background-size: 100%;
 
     .search-form__label {
         display: block;   
@@ -161,6 +160,12 @@ body {
 
 }
 
+.no-films-warning{
+    display: inline-block;
+    margin: 0 10%;
+    font-size: 5em;
+    color: @myGrey;
+}
 
 .main{
     flex: 1 0 auto;
