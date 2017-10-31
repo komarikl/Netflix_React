@@ -61,14 +61,14 @@ export default class App extends React.Component {
             <div className="wrapper">
                 <header className="header">
                     <Logo />
-                    <Search />
-                    {/* <MovieFullInfo movie={movies[0]}/> */}
+                    {/* <Search /> */}
+                    {<MovieFullInfo movie={movies[0]}/>}
                 </header>
                 <main className="main">
 
-                    <div className="row">
+                    <div className="subheader">
                         <span className="counter">{movies.length} movies found</span>
-                        <SortBy />
+                        <SortBy className="sorter"/>
                     </div>
                     <Content movies={movies}/>
                 </main>
