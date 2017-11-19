@@ -45,7 +45,7 @@ class MoviePage extends React.Component {
 			<div>
 				<MovieFullInfo movie={this.state.movie} goSearch={this.goSearch} />
 				<div className="subheader">Films by {this.state.movie.director}</div>
-				<Content movies={this.state.movies}/>
+				<Content movies={this.state.movies} findMovie={this.findMovie}/>
 			</div>
 		)
 	}
