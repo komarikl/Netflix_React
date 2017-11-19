@@ -22,9 +22,7 @@ class MoviePage extends React.Component {
 	}
 
 	findMovie(query) {
-		this.state.movie = _.find(Movies, function(movie) {
-			return movie.title == query;
-		});
+		this.state.movie = _.find(Movies, movie =>  movie.title === query);
 
 		if (this.state.movie.director) {
 			this.findSimilarMovies(this.state.movie.director);
@@ -32,11 +30,9 @@ class MoviePage extends React.Component {
 	}
 
 	findSimilarMovies(director) {
-		let movieId = this.state.movie.id;
+		const movieId = this.state.movie.id;
 
-		this.state.movies = _.filter(Movies, function(movie) {
-			return movie.director == director && movie.id !== movieId;
-		});
+		this.state.movies = _.filter(Movies, movie => movie.director === director && movie.id !== movieId);
 	}
 
 	goSearch(e) {
@@ -47,9 +43,9 @@ class MoviePage extends React.Component {
 	render() {
 		return (
 			<div>
-				<Movie movie={this.state.movie} goSearch={this.goSearch} />
-				<div>Films by {this.state.movie.director}</div>
-				<Content movies={this.state.movies} />
+				<MovieFullInfo movie={this.state.movie} goSearch={this.goSearch} />
+				<div className="subheader">Films by {this.state.movie.director}</div>
+				<Content movies={this.state.movies}/>
 			</div>
 		)
 	}

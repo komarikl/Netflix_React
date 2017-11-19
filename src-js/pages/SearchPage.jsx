@@ -61,10 +61,6 @@ class SearchPage extends React.Component {
 		return (
 			<div>
 				<Search {...searchProps} state={this.state} onChange={this.onChange} onSearchTypeChange={this.onSearchTypeChange} onSubmit={this.onSubmit} />
-				{/* <div className="subheader">
-                        <span className="counter">{movies.length} movies found</span>
-                        <SortBy className="sorter"/>
-                    </div> */}
 				{this.state.movies.length
 					?
 					<div className="subheader">

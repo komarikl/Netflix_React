@@ -85,9 +85,13 @@ module.exports = {
             hash: true,
             template: './index.html'
         }),
-		new ExtractTextPlugin({
-			filename: 'styles.css',
-			allChunks: true
-		}),
+        new ExtractTextPlugin({
+            filename: 'styles.css',
+            allChunks: true
+        }),
+        new webpack.SourceMapDevToolPlugin({
+            filename: '[name].js.map',
+            exclude: ['vendor.js']
+        }),
     ],
 };

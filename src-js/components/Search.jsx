@@ -1,23 +1,6 @@
 import React from 'react';
 
 export default class Search extends React.Component {
-    // constructor(props) {
-    //   super(props);
-    //   this.state = {value: ''};
-  
-    //   this.onSubmit = this.onSubmit.bind(this);
-    //   this.onChange = this.onChange.bind(this);
-    // }
-    
-    // onSubmit(e){
-    //   alert(`${this.state.value} will be found soon.`);
-    //   e.preventDefault();
-    // }
-
-    // onChange(e){
-    //     this.setState({value: e.target.value});
-    // }
-    
     render() {
       return (
         <form onSubmit={this.props.onSubmit} className="search-form">
