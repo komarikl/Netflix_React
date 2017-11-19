@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
 
@@ -8,11 +9,12 @@ module.exports = {
     context: path.join(__dirname, 'src-js'),
 
     entry: {
-        shop: [
+        index: [
             'react-hot-loader/patch',
             'webpack-dev-server/client?http://localhost:3000',
             './index',
-        ]
+        ],
+        styles: './styles/styles.less'
     },
 
     output: {
@@ -27,7 +29,7 @@ module.exports = {
     devServer: {
         historyApiFallback: true,
         hot: true,
-        port: 3000
+        port: 4300
     },
 
     module: {
@@ -45,6 +47,13 @@ module.exports = {
                     'babel-loader',
                 ],
             },
+            {
+				test: /\.less$/,
+				use: ExtractTextPlugin.extract({
+					fallback: 'style-loader',
+					use: ['css-loader', 'less-loader']
+				})
+			},
             {
                 test: /\.css$/,
                 use: [
@@ -75,6 +84,14 @@ module.exports = {
             title: 'Test',
             hash: true,
             template: './index.html'
+        }),
+        new ExtractTextPlugin({
+            filename: 'styles.css',
+            allChunks: true
+        }),
+        new webpack.SourceMapDevToolPlugin({
+            filename: '[name].js.map',
+            exclude: ['vendor.js']
         }),
     ],
 };
